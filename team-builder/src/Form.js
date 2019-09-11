@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-function AddField(props) {
+function Form(props) {
     const initialMember = {name: "", email: "", role: ""}
     const [member, setMember] = useState(initialMember);
 
@@ -29,8 +29,8 @@ function AddField(props) {
 
     const handleSubmit = event => {
         event.preventDefault();
-        
-        console.log(member);
+        props.pushMember([...props.team, member])
+        setMember(initialMember)
     }
 
     const reset = () => {
@@ -65,10 +65,10 @@ function AddField(props) {
                 />
 
                 <Button type="submit">Submit</Button>
-                <button type="button" onClick={reset} >Reset</button>
+                <Button type="button" onClick={reset} >Reset</Button>
             </form>
         </div>
     );
 }
 
-export default AddField
+export default Form

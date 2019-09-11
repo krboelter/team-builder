@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import './App.css';
-import AddField from "./form";
+import Form from "./Form";
+import Member from "./Member";
 
 function App() {
 
-  const [team, setTeam] = useState(
-    [
-    {
-      name: "Ken",
-      email: "krb@gmail.com",
-      role: "Developer"
-    }
-    ]);
+  const [team, setTeam] = useState([]);
 
   return (
     <div className="App">
-      <AddField />
+      <Form team={team} pushMember={setTeam} />
+
+      <Member team={team} />
     </div>
   );
 }
