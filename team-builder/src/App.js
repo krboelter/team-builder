@@ -5,12 +5,13 @@ import AddField from "./form";
 function App() {
 
   const [team, setTeam] = useState(
+    [
     {
-      name: "",
-      email: "",
-      role: ""
+      name: "Ken",
+      email: "krb@gmail.com",
+      role: "Developer"
     }
-    );
+    ]);
 
   return (
     <div className="App">
